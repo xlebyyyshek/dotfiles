@@ -1,0 +1,2 @@
+#!/bin/sh
+ln -s /etc/runit/sv/$1 /etc/runit/runsvdir/default

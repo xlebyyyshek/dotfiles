@@ -1,0 +1,2 @@
+#!/bin/sh
+cat ~/.zsh_history | dmenu-wl -p "Copy:" -i -h 30 -fn "JetBrainsMono Medium 14" | tr -d "\n" | wl-copy

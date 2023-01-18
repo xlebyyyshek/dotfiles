@@ -1,0 +1,4 @@
+#!/bin/sh
+memory=$(df -h | grep /dev/nvme0n1p7 | awk '{print $3"/"$2}')
+echo " home: $memory"
+
