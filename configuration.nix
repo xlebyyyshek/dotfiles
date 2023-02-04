@@ -61,10 +61,18 @@ in
     # Document
     sxiv zathura
     # Language
-    python39 rnix-lsp nodePackages.pyright
+    python310 rnix-lsp nodePackages.pyright
     # Internet
     wget curl firefox networkmanager git
     tdesktop
+    python310Packages.pip
+    python310Packages.numpy
+    python310Packages.scipy
+    libreoffice
+    hyprland
+    qtile
+    unzip
+    jdk8
   ];
 
   fonts = {
