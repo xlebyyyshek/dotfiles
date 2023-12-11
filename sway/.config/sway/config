@@ -8,6 +8,8 @@ xwayland enable
 #xwayland disable
 output eDP-1 scale 1
 #output eDP-1 pos 1600 0 res 1920x1080
+default_border none
+default_floating_border none
 
 ### Variables
 #
@@ -89,7 +91,7 @@ set $menu dmenu-wl_run -i -h 30 -fn "JetBrainsMono Medium 14"
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+e exec sway exit
 #
 # Moving around:
 #
@@ -179,10 +181,10 @@ set $menu dmenu-wl_run -i -h 30 -fn "JetBrainsMono Medium 14"
     # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+minus scratchpad show
 
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% | notify-send "Voluem up to: $(pamixer --get-volume)%"
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% | notify-send "$(pamixer --get-volume)%"
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% | exec /home/xl/.config/sway/level.sh
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% | exec /home/xl/.config/sway/level.sh
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle| exec /home/xl/.config/sway/level.sh
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle| exec /home/xl/.config/sway/level.sh
 bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5 | notify-send "$(light)%"
 bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5 | notify-send "$(light)%"
 #
@@ -228,6 +230,7 @@ bindsym $mod+r mode "resize"
 #    }
 #}
 exec waybar
+exec mako
 
 include /etc/sway/config.d/*
 input "1:1:AT_Translated_Set_2_keyboard" {

@@ -63,10 +63,11 @@ if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
 	add-zle-hook-widget -Uz zle-line-init zle_application_mode_start
 	add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
 fi
-#source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh 2>/dev/null
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh 2>/dev/null
 
 alias ls="exa --group-directories-first"
 alias ll="exa -l --group-directories-first"
 alias la="ll -a"
-alias pbar="~/.config/polybar/launch.sh"
 alias j="joshuto"
+alias pcp="rsync -ah --progress"
+
