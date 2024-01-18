@@ -1,5 +1,3 @@
 #!/bin/sh
 
-hour=$(date "+%H")
-
-echo "$((hour - 1)):$(date "+%M:%S")"
+echo "$(date "+%H:%M")"

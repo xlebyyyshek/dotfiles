@@ -1,7 +1,8 @@
 return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
 
-    use 'morhetz/gruvbox'
+--    use 'morhetz/gruvbox'
+    use { "ellisonleao/gruvbox.nvim" }
 
     use 'kyazdani42/nvim-web-devicons'
     use 'kyazdani42/nvim-tree.lua'
@@ -13,4 +14,7 @@ return require('packer').startup(function()
     use 'saadparwaiz1/cmp_luasnip'
 
     use 'nvim-treesitter/nvim-treesitter'
+
+    use { 'nvim-lualine/lualine.nvim', requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
 end)

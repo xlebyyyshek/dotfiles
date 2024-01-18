@@ -6,6 +6,46 @@
     min-height: 0;
 }
 
+@define-color bar-bg-color #0f0f0f;
+@define-color box-bg-color #1d1d1d;
+@define-color box-bg-sel-color #303030;
+@define-color box-fg-color #ececec; 
+@define-color box-fg-sel-color #ffffff;  
+@define-color box-fg-inac-color #5d5d5d; /* цвет текста открытого layout */
+@define-color urgent-fg-color #d7caca;
+
+#tags {
+    margin: 0px 5px;
+}
+
+#tags button,
+#tags button.occupied,
+#tags button.focused,
+#tags button.urgent {
+    margin: 1px;
+    border-radius: 0px;
+}
+
+#tags button {
+    color: @box-fg-inac-color;
+    padding: 0px 2px;
+}
+
+#tags button.occupied {
+    color: @box-fg-color;
+    background-color: @box-bg-sel-color;
+}
+
+#tags button.focused {
+    color: @box-fg-sel-color;
+    background-color: @box-bg-color;
+}
+
+#tags button.urgent {
+    color: @urgent-fg-color;
+    background-color: @box-bg-color;
+}
+
 window#waybar {
     background-color: #002b36;
     color: #ffffff;

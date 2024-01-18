@@ -74,7 +74,7 @@ set $menu dmenu-wl_run -i -h 30 -fn "JetBrainsMono Medium 14"
     bindsym $mod+Return exec $term
 
     # Kill focused window
-    bindsym Control+q kill
+    bindsym control+q kill
 
     # Start your launcher
     bindsym control+space exec $menu
@@ -91,7 +91,7 @@ set $menu dmenu-wl_run -i -h 30 -fn "JetBrainsMono Medium 14"
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec sway exit
+    bindsym $mod+Shift+q exec sway exit
 #
 # Moving around:
 #
@@ -231,6 +231,8 @@ bindsym $mod+r mode "resize"
 #}
 exec waybar
 exec mako
+exec_always autotiling -w 1 2 3 4 5 6 7 8 9
+
 
 include /etc/sway/config.d/*
 input "1:1:AT_Translated_Set_2_keyboard" {

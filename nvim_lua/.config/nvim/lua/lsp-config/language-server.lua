@@ -43,20 +43,9 @@ require('lspconfig')['rust_analyzer'].setup{
     }
 }
 
---require'lspconfig'.sumneko_lua.setup {
---  settings = {
---    Lua = {
---      diagnostics = {
---        globals = {'vim'},
---      },
---      workspace = {
---        library = vim.api.nvim_get_runtime_file("", true),
----      },
---      telemetry = {
---        enable = false,
---      },
---    },
---  },
+--require'lspconfig'.lua_ls.setup {
+--    on_attach = on_attach,
+ --   flags = lsp_flags,
 --}
 
 require('lspconfig')['gopls'].setup{
@@ -73,4 +62,3 @@ require('lspconfig')['clangd'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
 }
-

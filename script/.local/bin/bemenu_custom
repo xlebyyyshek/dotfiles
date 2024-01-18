@@ -1,0 +1,3 @@
+#!/bin/sh
+
+bemenu-run --fn 'JetBrainsMono Medium 18'

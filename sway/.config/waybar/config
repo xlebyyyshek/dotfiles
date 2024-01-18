@@ -1,7 +1,18 @@
 {
     "height": 30, // Waybar height (to be removed for auto height)
-    "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-right": ["pulseaudio", "custom/del", "network","custom/del", "memory","custom/del", "temperature","custom/del", "backlight","custom/del", "sway/language","custom/del", "battery","custom/del", "clock", "tray"],
+    "modules-left": ["custom/dwl#DP-1"], //,"sway/workspaces", "sway/mode"],
+    "modules-right": ["pulseaudio", "custom/del", "network","custom/del", "memory","custom/del", "temperature","custom/del", "backlight","custom/del", "battery","custom/del", "clock", "tray"],
+
+    "custom/dwl#DP-1": {
+ 	    "exec":                    "waybar-dwl.sh 'DP-1'",
+     	"format":                  "{}",
+     	"return-type":             "json"
+    },
+
+    "river/tags": {
+         "num-tags": 9,
+         "tag-labels": ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    },
  
     "tray": {
         // "icon-size": 21,
